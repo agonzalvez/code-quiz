@@ -1,0 +1,47 @@
+
+.scores{
+    top: 0;
+    left:0;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left:3%;
+}
+
+.timer{
+    top:0;
+    right:0;
+    position:absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 3%;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.quiz-container{
+    border: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    padding:1%;
+}
+
+#start-button{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1%;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+}
+
+h1, h2, h3, p {
+    font-family: Arial, Helvetica, sans-serif;
+}
