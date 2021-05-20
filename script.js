@@ -1,5 +1,7 @@
-var startBtn = document.querySelector("#start-button");
 var timer = document.querySelector(".timer");
+var score = document.querySelector(".scores");
+var startButton = document.querySelector("#start-button");
+var answerButton = document.querySelector(".answers-buttons")
 
 
 function startTimer() {
@@ -17,8 +19,9 @@ function startTimer() {
     }, 1000)
 };
 
-startBtn.addEventListener("click", function () {
+startButton.addEventListener("click", function(){
     startTimer();
+    console.log()
 });
 
 startTimer();
