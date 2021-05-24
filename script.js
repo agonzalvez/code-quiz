@@ -1,28 +1,82 @@
-var timer = document.querySelector(".timer");
-var score = document.querySelector(".scores");
-var startButton = document.querySelector("#start-button");
-var answerButton = document.querySelector(".answers-buttons");
+var timerEl = document.querySelector(".timer");
+var startButtonEl = document.querySelector("#start-button");
+var questionEl = document.querySelector(".questions");
+var choicesEl = document.querySelector(".choices");
+var answerEl = document.querySelector(".answers");
+var questionDivEl = document.querySelector("#quiz-content")
 
-var questions = [{
-    question: "Inside which HTML element do we put the JavaScript?",
-    answers: [
-        { text: "<script>", correct: true },
-        { text: "<javascript>", correct: false },
-        { text: "<js>", correct: false },
-        { text: "<scripting>", correct: false },
-    ]
-}
-]
 
-// Possible questions:
-// Where is the correct place to insert a JavaScript? <body>, <head>, <footer>, <title>
-// How do you write "Hello World" in an alert box? alert("Hello Word"); msg("Hello Word") ; alertBox("Hello Word"); msgBox("Hello Word");
-// How do you create a function in JavaScript? function = myFunction(), function:myFunction(), function myFunction(), function == myFunction(),
-// How can you add a comment in a JavaScript? //This is comment, 'This is a comment, <!--This is a comment-->, *This is a comment
+var questionCounter = 0;
+var timer = 60;
+var score = 0;
+var playerScores = [];
+var initials =[];
+var lsPlayerScores = "";
+var lsPlayerInitials = "";
+var aChoice,
+    bChoice,
+    cChoice,
+    dChoice;
+var resultScore, resultInitial;
+
+
+var quizQuestions = [{
+    questions: "Inside which HTML element do we put the JavaScript?",
+    choices: {
+        a: "<script>",
+        b: "<javascript>",
+        c: "<js>",
+        d: "<scripting>",
+    },
+    correctAnswer: "a",
+    },
+    {
+    questions: "Where is the correct place to insert a JavaScript?",
+    choices: {
+        a: "In the <body>",
+        b: "In the <head>",
+        c: "In the <footer>",
+        d: "In the <title>",
+    },
+    correctAnswer: "a",
+    },
+    {
+    questions: "How do you write 'Hello World' in an alert box?",
+    choices: {
+        a: "alert('Hello World!')",
+        b: "msg('Hello Word')",
+        c: "alertBox('Hello Word')",
+        d: "msgBox('Hello Word')",
+    },
+    correctAnswer:"a",
+    },
+    {
+    questions: "How do you create a function in JavaScript?",
+    choices:{
+        a: "function = myFunction()",
+        b: "function:myFunction()",
+        c: "function myFunction())",
+        d: "function == myFunction()",
+    },
+    correctAnswer:"c",
+    },
+    {
+    questions: "How can you add a comment in a JavaScript?",
+    answers:{
+        a: "//This is a comment",
+        b: "'This is a comment",
+        c: "<!--This is a comment-->",
+        d: "*This is a comment",
+    },
+    correctAnswer:"a",
+    },
+];
+
+
+// Timer
 
 function startTimer() {
     var timeRemaining = 60;
-
 
     var timeInterval = setInterval(function () {
         if (timeRemaining > 1) {
@@ -33,20 +87,37 @@ function startTimer() {
             clearInterval(timeInterval);
         }
     }, 1000)
+    startButton.disabled = true;
 };
 
 startButton.addEventListener("click", function () {
-    startTimer();
-    console.log()
+    startTimer()
+    renderFirstQuestion()
 });
 
 
-function nextQuestions() {
+function renderFirstQuestion() {
+var question1 = questions[questionCounter];
 
-}
+var question = question1.questions;
+questionh2 = document.createElement("h2")
+questionDiv.appendChild(questionh2)
 
-function selectAnswer() {
+var choices = question1.answers;
+var correctAnswer = question1.correctAnswer
+console.log(question1)
 
-}
+questionCounter++;
+
+};
 
 
+function renderNextQuestion(){
+    var question1 = questions[questionCounter];
+
+    var question = question1.questions
+    var choices = question1.choices
+    var correctAnswer = question1.correctAnswer
+
+    questionCounter++;
+};

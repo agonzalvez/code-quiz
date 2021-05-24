@@ -9,26 +9,22 @@
 </head>
 
 <body>
-    <header> 
-        <div class="scores">View High Scores</div>
-        <div class="timer">Time:</div>
+    <header class="header">
+        <div class="header-container">
+          <div class="scores">
+            <a href="#" id="scores">View Scores</a>
+          </div>
+          <div class="timer">Time:</div>
+        </div>
     </header>
 
-    <main class="quiz-container">
+    <main>
         
-        <div id="quiz-card">
-            <h1>Coding Quiz</h1>
-            <p>Try to answer the following code-related questions within the time limit. Note that incorrect answers will reduce your time by ten seconds!</p>
-            <button id="start-button">Start Quiz</button> 
-        </div>
-
-        <div id="quiz-content">
-            <h2 class="questions">Question</h2> 
-            <button class="answers-buttons">Answer 1</button>
-            <button class="answers-buttons">Answer 2</button>
-            <button class="answers-buttons">Answer 3</button>
-            <button class="answers-buttons">Answer 4</button>
-        </div>
+        <div class="quiz-container">
+            <div class="questions"></div>
+            <div class="choices"></div>
+            <div class="answers"></div>
+          </div>
 
     </main>
     
@@ -37,6 +33,6 @@
     </footer>
 
 
-    <script>src="script.js"</script>
+    <script src="script.js"></script>
 </body>
 </html>

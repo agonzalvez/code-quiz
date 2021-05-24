@@ -45,3 +45,7 @@ footer{
     justify-content: center;
     align-content: flex-end;
 }
+
+#quiz-content{
+    display:none;
+}
